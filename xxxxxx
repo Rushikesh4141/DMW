@@ -1,0 +1,21 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
+
+df= pd.read_csv('Iris PCA.csv')
+df
+
+X=df[['SepalLengthCm','SepalWidthCm','PetalLengthCm','PetalWidthCm']]
+Y=df['Species']
+
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y,test_size=0.30, random_state=1)
+
+model=GaussianNB()
+model.fit(X_train,Y_train)
+
+y_pred=clf.predict(X_test)
+print(classification_report(Y_test,y_pred))
