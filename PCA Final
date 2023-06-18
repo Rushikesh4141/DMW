@@ -1,0 +1,39 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+
+df=pd.read_csv('Iris PCA.csv')
+
+df
+df.head()
+df.info()
+df.describe()
+df.shape
+df.isnull().sum()
+df.dtypes
+
+x = df.drop('Species', axis=1)
+y = df['Species']
+
+x.head()
+
+y.head()
+
+scaler = StandardScaler()
+x_scaled = scaler.fit_transform(x)
+
+x_scaled
+
+pca = PCA(n_components=2)
+x_pca = pca.fit_transform(x_scaled)
+
+explained_variance_ratio = pca.explained_variance_ratio_
+print("Explained variance ratio:", explained_variance_ratio)
+
+plt.scatter(x_pca[:, 0], x_pca[:, 1])
+plt.xlabel('Principal Component 1')
+plt.ylabel('Principal Component 2')
+plt.title('PCA on Iris Dataset')
+plt.show()
