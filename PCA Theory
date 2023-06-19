@@ -1,0 +1,19 @@
+Principal component analysis (PCA) is a technique used to emphasize variation and 
+bring out strong patterns in a dataset.
+
+It's often used to make data easy to explore and visualize. It standardize dataset.
+It reduces problem of overfitting.
+
+First, consider a dataset in only two dimensions, like (height, weight). This dataset can 
+be plotted as points in a plane. But if we want to tease out variation, PCA finds a new 
+coordinate system in which every point has a new (x,y) value.
+
+The axes don't actually mean anything physical; they're combinations of height and 
+weight called "principal components" that are chosen to give one axes lots of variation.
+No of Principal component can be less than or equal to no of attribute.
+
+PCA is a tool for identifying the main axes of variance within a data set and allows for 
+easy data exploration to understand the key variables in the data and spot outliers.
+
+One of the most important applications of PCA is for speeding up machine learning 
+algorithms.
